@@ -15,18 +15,6 @@ colors.forEach(function (color) {
   })
 })
 
-// Temp
-
-const colors1 = document.querySelectorAll(".color")
-const container3 = document.querySelector("#container1")
-
-colors.forEach(function (color) {
-  color.addEventListener("click", function () {
-    const imageUrl = color.getAttribute("data-image")
-    container.style.backgroundImage = `url(${imageUrl})`
-  })
-})
-
 //////////////////////////////////////////
 
 const container1 = document.getElementById("container1")
@@ -61,9 +49,11 @@ const camera2 = new THREE.PerspectiveCamera(
 camera1.position.set(0, 0, 5)
 camera2.position.set(0, 3.5, 5)
 
-const loader = new GLTFLoader()
+//Model 1
 
-loader.load(
+const loader1 = new GLTFLoader()
+
+loader1.load(
   "/character.glb",
   function (glb) {
     scene1.add(glb.scene)
@@ -81,6 +71,8 @@ loader.load(
     console.error("Failed to load GLTF model:", error)
   }
 )
+
+//Model 2
 
 const loader2 = new GLTFLoader()
 
@@ -104,11 +96,16 @@ loader2.load(
   }
 )
 
-const light1 = new THREE.AmbientLight(0xffffff)
+//Light 1
 
+const light1 = new THREE.AmbientLight(0xffffff)
 light1.position.set(2, 2, 5)
+
+//Light 2
+
 const light2 = new THREE.AmbientLight(0xffffff)
 light2.position.set(2, 2, 5)
+
 scene1.add(light1)
 scene2.add(light2)
 
@@ -117,6 +114,8 @@ controls1.enableDamping = true
 
 const controls2 = new OrbitControls(camera2, renderer2.domElement)
 controls2.enableDamping = true
+
+//Anim
 
 function animate() {
   requestAnimationFrame(animate)
@@ -134,6 +133,8 @@ function animate() {
   renderer1.render(scene1, camera1)
   renderer2.render(scene2, camera2)
 }
+
+//Render
 
 renderer1.setClearColor(new THREE.Color(0x000000), 0)
 renderer2.setClearColor(new THREE.Color(0x000000), 0)
