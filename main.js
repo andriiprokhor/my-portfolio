@@ -7,6 +7,7 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js"
 
 const colors = document.querySelectorAll(".color")
 const container = document.querySelector("#container1")
+const links = document.querySelectorAll("a")
 
 colors.forEach(function (color) {
   color.addEventListener("click", function () {
