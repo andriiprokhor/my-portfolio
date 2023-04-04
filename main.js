@@ -15,6 +15,16 @@ colors.forEach(function (color) {
   })
 })
 
+const colors1 = document.querySelectorAll(".color")
+const container3 = document.querySelector("#container1")
+
+colors.forEach(function (color) {
+  color.addEventListener("click", function () {
+    const imageUrl = color.getAttribute("data-image")
+    container.style.backgroundImage = `url(${imageUrl})`
+  })
+})
+
 //////////////////////////////////////////
 
 const container1 = document.getElementById("container1")
