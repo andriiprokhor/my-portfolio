@@ -15,6 +15,8 @@ colors.forEach(function (color) {
   })
 })
 
+// Temp
+
 const colors1 = document.querySelectorAll(".color")
 const container3 = document.querySelector("#container1")
 
