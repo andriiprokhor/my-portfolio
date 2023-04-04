@@ -214,4 +214,8 @@ footer {
     display: flex;
     flex-direction: column;
   }
+
+  .section-1 {
+    padding-right: 2rem;
+  }
 }
